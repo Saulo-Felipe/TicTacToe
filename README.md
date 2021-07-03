@@ -10,7 +10,8 @@ Nesse Minigame existem dois Modos de game:
 
 
 # Screenshots 📸
-![Alt text](https://i.pinimg.com/originals/de/f6/96/def69643889ee29e232637646e839064.jpg "Title")
+![Alt text](./Screenshot01.png "Screenshot 01")
+![Alt text](./Screenshot02.png "Screenshot 02")
 
 # Getting Started 💻
 
@@ -23,5 +24,5 @@ Apenas isso é necessário, o arquivo `server.js` só é necessário para o depl
 <br>
 <br>
 
-<div style="text-align: center;">😎 Saulo Felipe</div>
+<div style="text-align: center; width: 100% !important;">😎 Saulo Felipe</div>
 <br>
