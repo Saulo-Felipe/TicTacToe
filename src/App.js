@@ -12,24 +12,25 @@ var App = function App() {
     })
 
 
+    // O INNERHTML dos SVG é necessário para poder gerar a animação
     useEffect(() => {
         CheckWinner()
         //Adicionar icones dinamicamente
         var winImage = document.querySelector(".icon-winner")
         var venceu = document.querySelector("#venceu")
-        if (win_tie[0][0] == true) {
+        if (win_tie[0][0] === true) {
             document.querySelector("#end-game").style.display = "block"
             document.querySelector("#endGameConfig").style.transform = "translate(-50%, -50%) scale(1)"
-            if (win_tie[0][1] == "O") {
+            if (win_tie[0][1] === "O") {
                 winImage.innerHTML = `<svg height="110" width="110"><circle class="circle" cx="60" cy="60" r="40" stroke="#231f20" stroke-width="10" fill-opacity="0" /></svg>`
                 venceu.innerHTML = "Venceu!"
-            } else if (win_tie[0][1] == "X") {
+            } else if (win_tie[0][1] === "X") {
                 winImage.innerHTML = `<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
               width="100px" height="100px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve"><g id="Layer_3" class="X-svg"><line id="path2" fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" x1="8.5" y1="41.5" x2="41.5" y2="8.5"/>
                 <line id="path3" fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" x1="41.5" y1="41.5" x2="8.5" y2="8.5"/></g></svg>`
                 venceu.innerHTML = "Venceu!"
             }
-        } else if (win_tie[1] == true) {
+        } else if (win_tie[1] === true) {
             document.querySelector("#end-game").style.display = "block"
             document.querySelector("#endGameConfig").style.transform = "translate(-50%, -50%) scale(1)"
 
@@ -46,8 +47,8 @@ var App = function App() {
         var cog = document.querySelector(".fa-cog")
         cog.addEventListener("click", () => {
             var dropdown = document.querySelector(".dropdown")
-            dropdown.style.display = getComputedStyle(dropdown, null).display == "none" ? "block" : "none"
-            cog.style.transform = getComputedStyle(dropdown, null).display == "none" ? "rotate(0deg)" : "rotate(180deg)"
+            dropdown.style.display = getComputedStyle(dropdown, null).display === "none" ? "block" : "none"
+            cog.style.transform = getComputedStyle(dropdown, null).display === "none" ? "rotate(0deg)" : "rotate(180deg)"
         })
     }, [])
 
@@ -62,51 +63,51 @@ var App = function App() {
         document.querySelector("#end-game").style.display = "none"
     }
     function CheckWinner() {
-        if ((game.gameConfig[0] == "O" && game.gameConfig[1] == "O" && game.gameConfig[2] == "O") ||
-            (game.gameConfig[3] == "O" && game.gameConfig[4] == "O" && game.gameConfig[5] == "O") ||
-            (game.gameConfig[6] == "O" && game.gameConfig[7] == "O" && game.gameConfig[8] == "O") ||
+        if ((game.gameConfig[0] === "O" && game.gameConfig[1] === "O" && game.gameConfig[2] === "O") ||
+            (game.gameConfig[3] === "O" && game.gameConfig[4] === "O" && game.gameConfig[5] === "O") ||
+            (game.gameConfig[6] === "O" && game.gameConfig[7] === "O" && game.gameConfig[8] === "O") ||
             //Vertical Possibility
-            (game.gameConfig[0] == "O" && game.gameConfig[3] == "O" && game.gameConfig[6] == "O") ||
-            (game.gameConfig[1] == "O" && game.gameConfig[4] == "O" && game.gameConfig[7] == "O") ||
-            (game.gameConfig[2] == "O" && game.gameConfig[5] == "O" && game.gameConfig[8] == "O") ||
+            (game.gameConfig[0] === "O" && game.gameConfig[3] === "O" && game.gameConfig[6] === "O") ||
+            (game.gameConfig[1] === "O" && game.gameConfig[4] === "O" && game.gameConfig[7] === "O") ||
+            (game.gameConfig[2] === "O" && game.gameConfig[5] === "O" && game.gameConfig[8] === "O") ||
             //Diagonal Possibility
-            (game.gameConfig[0] == "O" && game.gameConfig[4] == "O" && game.gameConfig[8] == "O") ||
-            (game.gameConfig[2] == "O" && game.gameConfig[4] == "O" && game.gameConfig[6] == "O"))
+            (game.gameConfig[0] === "O" && game.gameConfig[4] === "O" && game.gameConfig[8] === "O") ||
+            (game.gameConfig[2] === "O" && game.gameConfig[4] === "O" && game.gameConfig[6] === "O"))
         { // If número O vencer
             win_tie[0][0] = true
             win_tie[0][1] = "O"
-        } else if ((game.gameConfig[0] == "X" && game.gameConfig[1] == "X" && game.gameConfig[2] == "X") ||
-            (game.gameConfig[3] == "X" && game.gameConfig[4] == "X" && game.gameConfig[5] == "X") ||
-            (game.gameConfig[6] == "X" && game.gameConfig[7] == "X" && game.gameConfig[8] == "X") ||
+        } else if ((game.gameConfig[0] === "X" && game.gameConfig[1] === "X" && game.gameConfig[2] === "X") ||
+            (game.gameConfig[3] === "X" && game.gameConfig[4] === "X" && game.gameConfig[5] === "X") ||
+            (game.gameConfig[6] === "X" && game.gameConfig[7] === "X" && game.gameConfig[8] === "X") ||
             //Vertical Possibility
-            (game.gameConfig[0] == "X" && game.gameConfig[3] == "X" && game.gameConfig[6] == "X") ||
-            (game.gameConfig[1] == "X" && game.gameConfig[4] == "X" && game.gameConfig[7] == "X") ||
-            (game.gameConfig[2] == "X" && game.gameConfig[5] == "X" && game.gameConfig[8] == "X") ||
+            (game.gameConfig[0] === "X" && game.gameConfig[3] === "X" && game.gameConfig[6] === "X") ||
+            (game.gameConfig[1] === "X" && game.gameConfig[4] === "X" && game.gameConfig[7] === "X") ||
+            (game.gameConfig[2] === "X" && game.gameConfig[5] === "X" && game.gameConfig[8] === "X") ||
             //Linear Possibility
-            (game.gameConfig[0] == "X" && game.gameConfig[4] == "X" && game.gameConfig[8] == "X") ||
-            (game.gameConfig[2] == "X" && game.gameConfig[4] == "X" && game.gameConfig[6] == "X"))
+            (game.gameConfig[0] === "X" && game.gameConfig[4] === "X" && game.gameConfig[8] === "X") ||
+            (game.gameConfig[2] === "X" && game.gameConfig[4] === "X" && game.gameConfig[6] === "X"))
         {
             win_tie[0][0] = true
             win_tie[0][1] = "X"
-        } else if (game.gameConfig.filter(element => element != null).length == 9) {
+        } else if (game.gameConfig.filter(element => element != null).length === 9) {
                 win_tie[1] = true
         }
     }
 
     function handlePlayed(action) {
-        if (game.gameConfig[action - 1] == null && win_tie[0][0] == false) {
+        if (game.gameConfig[action - 1] === null && win_tie[0][0] === false) {
             function newValues() {
-                var newValue = [...game.gameConfig.slice(0, action - 1), game.tic_tac == "O" ? "O" : "X" , ...game.gameConfig.slice(action)]
+                var newValue = [...game.gameConfig.slice(0, action - 1), game.tic_tac === "O" ? "O" : "X" , ...game.gameConfig.slice(action)]
                 setGame({
-                    tic_tac: game.tic_tac == "O" ? "X" : "O",
+                    tic_tac: game.tic_tac === "O" ? "X" : "O",
                     gameConfig: newValue,
                     gameMode: game.gameMode
                 })
             }
-            if (game.gameMode == "human") {
+            if (game.gameMode === "human") {
                 newValues()
-            } else if (game.gameMode == "IA") {
-                if (game.tic_tac == "O") {
+            } else if (game.gameMode === "IA") {
+                if (game.tic_tac === "O") {
                     newValues()
                 }
             }
@@ -114,12 +115,12 @@ var App = function App() {
     }
 
     useEffect(() => {
-        if ((game.gameMode == "IA") && (game.tic_tac == "X") && (win_tie[0][0] == false) && (win_tie[1] == false)) {
+        if ((game.gameMode === "IA") && (game.tic_tac === "X") && (win_tie[0][0] === false) && (win_tie[1] === false)) {
             config(game)
 
             setTimeout(() => {
                 setGame({
-                    tic_tac: game.tic_tac == "O" ? "X" : "O",
+                    tic_tac: game.tic_tac === "O" ? "X" : "O",
                     gameConfig: IaPlay,
                     gameMode: game.gameMode
                 })
@@ -208,7 +209,7 @@ var App = function App() {
                 <button className="btn game-again" onClick={() => restart()}>Jogar Novamente</button>
                 <button className="btn exit" onClick={() => closeConfig()}>Ver Resultado</button>
             </div>
-            <div className="modeGame">Modo de Jogo atual: <span className="red">{game.gameMode == "human" ? 'Contra um Amigo 😎' : 'Contra o robo 🤖'}</span></div>
+            <div className="modeGame">Modo de Jogo atual: <span className="red">{game.gameMode === "human" ? 'Contra um Amigo 😎' : 'Contra o robo 🤖'}</span></div>
         </div>
     )
 
