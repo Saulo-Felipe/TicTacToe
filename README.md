@@ -5,6 +5,7 @@
 ------------------------------------
 ## Índice
 
+* [Preview](#preview)
 * [Sobre](#sobre)
 * [Funcionalidades](#funcionalidades)
 * [Layout](#layout)
@@ -12,7 +13,6 @@
 * [Tecnologias](#tecnologias)
 * [Autor](#autor)
 * [Licença](#licenca)
-* <a href="https://jogo-da-velha-saulo.herokuapp.com/" target="_blank">#️⃣ Jogo da Velha (Tic-tac-toe) ---- Concluído ✅ ----</a>
 
 ------------------------------------
 
@@ -20,6 +20,12 @@
  
 #️⃣ O clássico Jogo da velha construído inteiramente em reactJS com opção de jogar contra um amigo ou jogar contra o robô.
 <br>
+
+------------------------------------
+
+## 🚀 Preview <a id="preview"></a>
+
+-> https://tic-tac-toe-eight-ebon.vercel.app/
 
 ------------------------------------
 
@@ -34,8 +40,8 @@
 
 ## 🎨 Layout <a id="layout"></a>
 
-<a href="https://jogo-da-velha-saulo.herokuapp.com/"><img src="./src/images/badge.png"/></a>
-<p>*O Layout completo do site está disponível na <a href="https://jogo-da-velha-saulo.herokuapp.com/">Heroku</a></p>
+<a href="https://tic-tac-toe-eight-ebon.vercel.app/"><img src="./src/images/badge.png"/></a>
+<p>*O Layout completo do site está disponível <a href="https://tic-tac-toe-eight-ebon.vercel.app/">aqui</a>.</p>
 
 <h3>Mobile (web)</h3>
 <p align="center">
